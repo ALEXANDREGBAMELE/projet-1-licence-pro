@@ -1,17 +1,25 @@
 from django.db import models
 
 # Create your models here.
+class Filiere(models.Model):
+    designation_filiere = models.CharField(max_length=255)
+
+class Matiere(models.Model):
+    designation_matiere = models.CharField(max_length=255)
+    filiere = models.ForeignKey(Filiere, on_delete=models.CASCADE, null=True)
+
 class Etudiant(models.Model):
-    id_etudiant = models.BigIntegerField(default=0)
+    matricule_etudiant = models.CharField(max_length=255)
     nom_etudiant = models.CharField(max_length=255)
     prenom_etudiant = models.CharField(max_length=255)
     age_etudiant = models.CharField(max_length=255)
     mail_etudiant = models.CharField(max_length=255)
     tel_etudiant = models.CharField(max_length=255)
-    etudiant_password = models.CharField(max_length=255)
+    password_etudiant = models.CharField(max_length=255)
+    filiere = models.ForeignKey(Filiere, on_delete=models.CASCADE,null=True)
     
-class Article(models.Model):
-    id_article = models.BigIntegerField(default=0)
-    libelle_article = models.CharField(max_length=255)
-    contenu_article = models.CharField(max_length=255)
-    date_artcle = models.DateTimeField("Date publication article")
+
+class Note(models.Model):
+    etudiants = models.ForeignKey(Etudiant, on_delete=models.CASCADE)
+    matieres = models.ForeignKey(Matiere, on_delete=models.CASCADE)
+    notes = models.IntegerField(default=0)

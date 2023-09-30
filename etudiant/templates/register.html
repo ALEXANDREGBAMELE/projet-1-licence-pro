@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+<div class="container-fluid" style="background-color: gainsboro;">
+  <div class="container formulaire" style="width: 600px; height: 500px; padding-top: 40px;">
+    <center>
+      <div class="pb-4 text-center"><h1>Formulaire d'enregistrement </h1></div>
+      <form action="post">
+        <div class="form-group d-flex gap-2">
+          <label for="" style="width:150px">Matricule</label>
+          <input class="form-control" type="text" name="matricule" id="" />
+        </div>
+
+        <div class="form-group d-flex gap-2 mt-3">
+          <label for="" style="width:150px">Nom</label>
+          <input class="form-control" type="text" name="nom" id="" />
+        </div>
+        <div class="form-group d-flex gap-2 mt-3">
+          <label for="" class="" style="width:150px">Prenom</label>
+          <input class="form-control" type="text" name="prenom" id="" />
+        </div>
+        <div class="form-group d-flex gap-2 mt-3">
+          <label for="" style="width:150px">Date de naissance</label>
+          <input class="form-control" type="date" name="date_naissance" id="" />
+        </div>
+        <div class="form-group d-flex gap-2 mt-3">
+          <label for="" style="width:150px">Telephone</label>
+          <input class="form-control" type="number" name="telephone" id="" />
+        </div>
+        <div class="form-group text-end mt-3">
+          <input class="btn btn-success" style="width:150px; height: 35px;" type="submit" name="submit" id="" value="Enregistrer" />
+        </div>
+      </form>
+    </center>
+  </div>
+</div>
+{% include 'footer.html' %}
